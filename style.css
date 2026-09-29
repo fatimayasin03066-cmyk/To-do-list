@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background: #090d16; /* Fixed to pure deep dark theme */
+    color: #f1f5f9;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 30px 16px;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+}
+
+header {
+    margin-bottom: 24px;
+}
+header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+header p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+/* Glassmorphic Input Card */
+.task-input-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+#task-input {
+    width: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 12px 14px;
+    color: #f1f5f9;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#task-input:focus {
+    border-color: #818cf8;
+}
+
+.input-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+#category-select {
+    flex: 1;
+    background: rgba(15, 23, 42, 0.6);
+    color: #cbd5e1;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 10px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+#add-btn {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+#add-btn:hover {
+    opacity: 0.9;
+}
+/* Fix for Filter Tabs container and buttons */
+.filters {
+    display: flex;
+    width:100%;
+    gap: 4px;
+    margin-bottom: 20px;
+    background: rgba(30, 41, 59, 0.6);
+    padding: 4px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-sizing: border-box;
+}
+.filter-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    padding: 8px 2px;
+    border-radius: 10px;
+    font-size: 0.78rem;
+    font-weight:500;
+    cursor: pointer;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+    background: #1e293b;
+    color: #f1f5f9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Task List */
+#task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.task-item {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 14px 16px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s;
+}
+
+.task-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    word-break: break-word;
+}
+
+.task-content input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #818cf8;
+    cursor: pointer;
+}
+
+.task-text {
+    font-size: 0.95rem;
+    color: #e2e8f0;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #64748b;
+}
+
+/* Aesthetic Tag Pill */
+.task-tag {
+    font-size: 0.72rem;
+    background: rgba(129, 140, 248, 0.12);
+    color: #a5b4fc;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-left: 8px;
+    white-space: nowrap;
+    font-weight: 500;
+    border: 1px solid rgba(129, 140, 248, 0.2);
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 4px 8px;
+    transition: color 0.2s;
+}
+
+.delete-btn:hover {
+    color: #f43f5e;
+}
+
+/* Footer info */
+.task-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    padding: 0 4px;
+}
+
+#clear-completed {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+}
+
+#clear-completed:hover {
+    color: #f43f5e;
+}
+
